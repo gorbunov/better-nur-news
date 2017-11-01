@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+
+  "name": "News headlines truth injecton",
+  "description": "This extension allows the user to see news headlines with a grain of salt.",
+  "version": "0.4",
+
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://www.nur.kz/*"],
+      "js": ["js/convert.js"],
+      "run_at" : "document_end"
+    }
+  ],
+  "permissions": [
+    "activeTab"
+  ]
+}
